@@ -1,0 +1,16 @@
+name,email,subject,attendance,marks,feesPaid
+Aarav Sharma,aarav.sharma@example.in,Mathematics,85,78,True
+Aarav Sharma,aarav.sharma@example.in,Physics,90,82,True
+Aarav Sharma,aarav.sharma@example.in,Chemistry,80,75,True
+Rohan Verma,rohan.verma@example.in,Mathematics,65,55,False
+Rohan Verma,rohan.verma@example.in,Physics,70,60,False
+Rohan Verma,rohan.verma@example.in,Chemistry,60,50,False
+Priya Iyer,priya.iyer@example.in,Mathematics,75,68,True
+Priya Iyer,priya.iyer@example.in,Physics,80,72,True
+Priya Iyer,priya.iyer@example.in,Chemistry,85,78,True
+Vikram Nair,vikram.nair@example.in,Mathematics,45,35,False
+Vikram Nair,vikram.nair@example.in,Physics,50,40,False
+Vikram Nair,vikram.nair@example.in,Chemistry,40,30,False
+Ananya Gupta,ananya.gupta@example.in,Mathematics,90,85,True
+Ananya Gupta,ananya.gupta@example.in,Physics,95,90,True
+Ananya Gupta,ananya.gupta@example.in,Chemistry,88,82,True
