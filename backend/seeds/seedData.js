@@ -20,8 +20,8 @@ const seedData = async () => {
 
     // Create mentor
     const mentor = new User({
-      name: 'Dr. Nakul',
-      email: 'mentor@example.com',
+      name: 'Tushar Mishra',
+      email: 'tusharmishra6666@gmail.com',
       password: 'password123',
       role: 'mentor'
     });
@@ -29,7 +29,7 @@ const seedData = async () => {
 
     // Create students
     const studentUsers = [
-      { name: 'Suhana', email: 'Suhana@example.com', password: 'password123', role: 'student' },
+
       { name: 'Rahul Sharma', email: 'rahul@example.com', password: 'password123', role: 'student' },
       { name: 'Sushant Sharma', email: 'Sushant@example.com', password: 'password123', role: 'student' }
     ];

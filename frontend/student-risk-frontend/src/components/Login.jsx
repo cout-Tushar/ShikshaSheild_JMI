@@ -97,7 +97,7 @@ const Login = ({ onLogin, switchToRegister  }) => {
             
             <div className="mt-4 text-sm text-gray-600">
               <p><strong>Demo Accounts:</strong></p>
-              <p>Mentor: mentor@example.com / password123</p>
+              <p>Mentor: tusharmishra6666@gmail.com / password123</p>
               <p>Student: sushant@example.com / password123</p>
             </div>
             <div className="mt-4 text-center text-sm text-gray-600">

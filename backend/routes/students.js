@@ -109,6 +109,46 @@ router.post('/analyze/:id', auth, requireRole(['mentor']), async (req, res) => {
   }
 });
 
+async function sendAutomatedAlerts() {
+  try {
+    const highRiskStudents = await Student.find({ riskLevel: 'High' })
+      .populate('userId', 'name email')
+      .lean();
+
+    if (!highRiskStudents.length) return;
+
+    const mentors = await User.find({ role: 'mentor' }).select('name email').lean();
+
+    // Send emails to high-risk students
+    for (const student of highRiskStudents) {
+      const studentEmailContent = generateStudentEmailContent(student);
+      await sendEmail(
+        student.userId.email,
+        '⚠️ Academic Performance Alert - Immediate Action Required',
+        studentEmailContent.text,
+        studentEmailContent.html
+      );
+      console.log(`📧 Email sent to student: ${student.userId.name}`);
+    }
+
+    // Send summary email to mentors
+    const mentorEmailContent = generateMentorEmailContent(highRiskStudents);
+    for (const mentor of mentors) {
+      await sendEmail(
+        mentor.email,
+        `🚨 High-Risk Students Report - ${highRiskStudents.length} Students Need Attention`,
+        mentorEmailContent.text,
+        mentorEmailContent.html
+      );
+      console.log(`📧 Email sent to mentor: ${mentor.name}`);
+    }
+  } catch (err) {
+    console.error('❌ Error sending automated alerts:', err.message);
+  }
+}
+
+
+
 // Upload CSV (mentor only)
 router.post('/upload-csv', auth, requireRole(['mentor']), upload.single('csvFile'), async (req, res) => {
   try {
@@ -163,10 +203,22 @@ router.post('/upload-csv', auth, requireRole(['mentor']), upload.single('csvFile
     }
 
     res.json({ message: 'CSV processed', results });
+
+     setTimeout(async () => {
+        console.log('🕒 Sending automated emails 10 seconds after CSV upload...');
+        await sendAutomatedAlerts();
+      }, 10 * 1000); 
+      
+
   } catch (error) {
     res.status(500).json({ message: 'Error processing CSV', error: error.message });
   }
+
+  
+
 });
+
+
 
 // Update student (mentor only)
 router.put('/:id', auth, requireRole(['mentor']), async (req, res) => {

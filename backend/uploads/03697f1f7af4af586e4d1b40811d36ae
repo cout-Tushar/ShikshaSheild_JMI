@@ -1,0 +1,17 @@
+name,email,subject,attendance,marks,feesPaid
+Suhana Kesharwani,suhanakesharwani@gmail.com,Mathematics,45,35,false
+Suhana Kesharwani,suhanakesharwani@gmail.com,Physics,60,42,false
+Suhana Kesharwani,suhanakesharwani@gmail.com,Chemistry,55,38,false
+Suhana Kesharwani,suhanakesharwani@gmail.com,English,70,48,false
+Shreyjeet Singh,shreyjeetsingh06@gmail.com,Mathematics,40,32,false
+Shreyjeet Singh,shreyjeetsingh06@gmail.com,Physics,55,38,false
+Shreyjeet Singh,shreyjeetsingh06@gmail.com,Chemistry,48,35,false
+Shreyjeet Singh,shreyjeetsingh06@gmail.com,Biology,62,41,false
+Shaurya Sharma,shaurya.shrma7@gmail.com,Mathematics,35,28,false
+Shaurya Sharma,shaurya.shrma7@gmail.com,Physics,45,33,false
+Shaurya Sharma,shaurya.shrma7@gmail.com,English,50,40,false
+Shaurya Sharma,shaurya.shrma7@gmail.com,Computer Science,58,42,false
+Aditya Jha,jhaaditya928@gmail.com,Mathematics,65,45,true
+Aditya Jha,jhaaditya928@gmail.com,Physics,70,48,true
+Aditya Jha,jhaaditya928@gmail.com,Chemistry,55,38,true
+Aditya Jha,jhaaditya928@gmail.com,English,72,52,true
