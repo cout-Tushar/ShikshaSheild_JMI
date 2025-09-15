@@ -1,0 +1,23 @@
+POST http://localhost:5000/api/students/upload-csv
+
+Authorization: 530678cdca74f05b28b5a9c46baf03ade89086a647ff727c69d6371826b1b760b3728937ec8b87cc792933570184930eed29eae793ae04f37d662a44a22f8b4a
+
+Content-Type: multipart/form-data
+
+name,email,subject,attendance,marks,feesPaid
+Suhana Kesharwani,suhanakesharwani@gmail.com,Mathematics,45,35,false
+Suhana Kesharwani,suhanakesharwani@gmail.com,Physics,60,42,false
+Suhana Kesharwani,suhanakesharwani@gmail.com,Chemistry,55,38,false
+Suhana Kesharwani,suhanakesharwani@gmail.com,English,70,48,false
+Tushar Mishra,tusharmishra6666@gmail.com,Mathematics,40,32,false
+Tushar Mishra,tusharmishra6666@gmail.com,Physics,55,38,false
+Tushar Mishra,tusharmishra6666@gmail.com,Chemistry,48,35,false
+Tushar Mishra,tusharmishra6666@gmail.com,Biology,62,41,false
+Rahul Sharma,rahul.test@gmail.com,Mathematics,35,28,false
+Rahul Sharma,rahul.test@gmail.com,Physics,45,33,false
+Rahul Sharma,rahul.test@gmail.com,English,50,40,false
+Rahul Sharma,rahul.test@gmail.com,Computer Science,58,42,false
+Priya Patel,priya.test@gmail.com,Mathematics,65,45,true
+Priya Patel,priya.test@gmail.com,Physics,70,48,true
+Priya Patel,priya.test@gmail.com,Chemistry,55,38,true
+Priya Patel,priya.test@gmail.com,English,72,52,true

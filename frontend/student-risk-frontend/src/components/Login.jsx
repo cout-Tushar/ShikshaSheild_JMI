@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { authApi } from '../services/api';
 
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin, switchToRegister  }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -100,6 +100,18 @@ const Login = ({ onLogin }) => {
               <p>Mentor: mentor@example.com / password123</p>
               <p>Student: sushant@example.com / password123</p>
             </div>
+            <div className="mt-4 text-center text-sm text-gray-600">
+  <p>
+    Don't have an account?{' '}
+    <button
+      type="button"
+      onClick={switchToRegister}
+      className="text-blue-600 hover:text-blue-500 font-medium"
+    >
+      Register
+    </button>
+  </p>
+</div>
           </div>
         </form>
       </div>

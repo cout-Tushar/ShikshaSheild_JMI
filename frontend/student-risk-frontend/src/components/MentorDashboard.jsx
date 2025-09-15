@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { studentApi } from '../services/api';
 import StudentTable from './StudentTable';
 import Charts from './Charts';
+import EditStudentModal from "./EditStudentModal";
 
 const MentorDashboard = () => {
   const [students, setStudents] = useState([]);

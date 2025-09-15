@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import Login from './components/Login';
+import Register from './components/Register';
 import StudentDashboard from './components/StudentDashboard';
 import MentorDashboard from './components/MentorDashboard';
 
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showRegister, setShowRegister] = useState(false); // ✅ new state
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -35,6 +37,10 @@ function App() {
     setUser(null);
   };
 
+  // ✅ handlers to switch forms
+  const switchToRegister = () => setShowRegister(true);
+  const switchToLogin = () => setShowRegister(false);
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -47,7 +53,17 @@ function App() {
     <AuthProvider>
       <div className="min-h-screen bg-gray-50">
         {!user ? (
-          <Login onLogin={handleLogin} />
+          showRegister ? (
+            <Register 
+              onRegister={handleLogin} 
+              switchToLogin={switchToLogin} 
+            />
+          ) : (
+            <Login 
+              onLogin={handleLogin} 
+              switchToRegister={switchToRegister} 
+            />
+          )
         ) : (
           <>
             <nav className="bg-blue-600 text-white p-4">
@@ -76,15 +92,16 @@ function App() {
                 <MentorDashboard />
               )}
             </main>
-                <footer className="bg-gradient-to-r from-blue-600 to-blue-500 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        <div className="text-center">
-          <p className="text-blue-100 text-sm ">
-            © 2025 <span className='font-bold'>शिक्षाShield</span> . All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+
+            <footer className="bg-gradient-to-r from-blue-600 to-blue-500 text-white">
+              <div className="max-w-7xl mx-auto px-4 py-4">
+                <div className="text-center">
+                  <p className="text-blue-100 text-sm ">
+                    © 2025 <span className='font-bold'>शिक्षाShield</span> . All rights reserved.
+                  </p>
+                </div>
+              </div>
+            </footer>
           </>
         )}
       </div>
