@@ -75,7 +75,7 @@ router.post('/analyze/:id', auth, requireRole(['mentor']), async (req, res) => {
 
     // Call ML service
     try {
-      const mlResponse = await axios.post('http://localhost:5001/analyze', {
+      const mlResponse = await axios.post(process.env.ML_SERVICE_URL + '/analyze', {
         subjects: student.subjects,
         feesPaid: student.feesPaid
       });

@@ -31,7 +31,7 @@ router.post('/register', async (req, res) => {
 
     const token = jwt.sign(
       { userId: newUser._id, role: newUser.role },
-      process.env.JWT_SECRET || '530678cdca74f05b28b5a9c46baf03ade89086a647ff727c69d6371826b1b760b3728937ec8b87cc792933570184930eed29eae793ae04f37d662a44a22f8b4a',
+      process.env.JWT_SECRET ,
       { expiresIn: '7d' }
     );
 
@@ -67,7 +67,7 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign(
       { userId: user._id, role: user.role },
-      process.env.JWT_SECRET || '530678cdca74f05b28b5a9c46baf03ade89086a647ff727c69d6371826b1b760b3728937ec8b87cc792933570184930eed29eae793ae04f37d662a44a22f8b4a',
+      process.env.JWT_SECRET ,
       { expiresIn: '7d' }
     );
 
