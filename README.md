@@ -1,58 +1,126 @@
 # शिक्षाShield – Student Risk Detection System
 
-**शिक्षाShield** is an intelligent platform designed to identify students at risk based on academic performance, attendance, and fee status. It uses machine learning to help educational institutions proactively support students who may need guidance.  
+**शिक्षाShield** is an intelligent platform designed to identify students at risk based on academic performance, attendance, and fee status. It uses Machine Learning to help educational institutions proactively support students who may need guidance.
 
 ---
 
-## Features
+## 🚀 Features
 
-- ✅ **Automated Risk Analysis** – Detects students at academic or financial risk.  
-- ✅ **Data-Driven Insights** – Evaluates metrics like attendance, marks, and fees.  
-- ✅ **CSV Import** – Upload student data in bulk for quick analysis.  
-- ✅ **Automated Notifications** – Sends emails to students or guardians when risks are detected.  
-- ✅ **Role-Based Access** – Secure access for mentors, admins, and students.  
-- ✅ **Web Dashboard** – Easy-to-use interface to manage and view student data.  
+- ✅ **Automated Risk Analysis** – Detects students at academic or financial risk  
+- ✅ **Data-Driven Insights** – Evaluates attendance, marks, and fee metrics  
+- ✅ **CSV Import** – Upload student data in bulk for quick analysis  
+- ✅ **Automated Notifications** – Sends emails to students or guardians when risks are detected  
+- ✅ **Role-Based Access** – Secure access for mentors, admins, and students  
+- ✅ **Web Dashboard** – Clean and easy-to-use interface to manage and view student data  
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
+- **Frontend:** React (Vite)  
 - **Backend:** Node.js, Express  
-- **Frontend:** (Add your frontend tech here, e.g., React / HTML/CSS/JS)  
 - **Database:** MongoDB  
 - **Machine Learning:** Python (scikit-learn)  
 - **Email Notifications:** SendGrid / Nodemailer  
-- **Scheduler:** node-cron for automated tasks  
+- **Scheduler:** node-cron  
 
 ---
 
-## Installation
+## 📂 Project Structure
+
+```
+ShikshaSheild_JMI/
+│
+├── backend/                  # Express backend API
+├── frontend/
+│   └── student-risk-frontend/ # React (Vite) frontend
+├── ml-services/              # Python ML services
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/shikshashield.git
-cd shikshashield
+git clone https://github.com/cout-Tushar/ShikshaSheild_JMI.git
+cd ShikshaSheild_JMI
+```
 
-# Install backend dependencies
+---
+
+### 2️⃣ Setup Backend
+
+```bash
 cd backend
 npm install
+```
 
-# Install Python dependencies for ML services
-cd ../ml-services
-pip install -r requirements.txt
+Create a `.env` file inside the `backend/` folder and add:
 
-# Set up environment variables
-export MONGO_URI="your_mongodb_connection_string"
-export SENDGRID_API_KEY="your_sendgrid_api_key"
-export EMAIL_SENDER="your_verified_email"
+```
+MONGO_URI=your_mongodb_connection_string
+SENDGRID_API_KEY=your_sendgrid_api_key
+EMAIL_SENDER=your_verified_email
+```
 
-# Start the backend server
-cd ../backend
+Start backend server:
+
+```bash
 npm start
+```
 
-# Start ML services (if separate)
-cd ../ml-services
+Backend runs on:
+
+```
+http://localhost:5000
+```
+
+---
+
+### 3️⃣ Setup Frontend
+
+```bash
+cd ../frontend/student-risk-frontend
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+### 4️⃣ Setup ML Services
+
+```bash
+cd ../../ml-services
+pip install -r requirements.txt
 python app.py
+```
 
-# Access the application at http://localhost:5000
+---
 
+## 🌐 Application Overview
+
+- Backend API → `http://localhost:5000`
+- Frontend → `http://localhost:5173`
+- ML Service → Runs separately via Python
+
+---
+
+## 🎯 Project Goal
+
+The goal of **शिक्षाShield** is to help institutions take proactive action by identifying at-risk students early and enabling timely mentorship and intervention.
+
+---
+
+## 👨‍💻 Author
+
+**Tushar Mishra & Suhana**  
+GitHub: https://github.com/cout-Tushar
